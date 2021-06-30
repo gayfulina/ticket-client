@@ -1,0 +1,47 @@
+{
+  "private": true,
+  "scripts": {
+    "local": "cross-env UMI_ENV=local umi dev",
+    "prod": "cross-env UMI_ENV=prod umi dev",
+    "build": "umi build",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage"
+  },
+  "dependencies": {
+    "@umijs/preset-react": "^1.7.8",
+    "antd": "^4.9.4",
+    "axios": "^0.21.1",
+    "axios-progress-bar": "^1.2.0",
+    "bootstrap": "^5.0.0-beta1",
+    "classnames": "^2.2.6",
+    "lint-staged": "^10.5.1",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.32",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "umi": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.11",
+    "@types/lodash": "^4.14.170",
+    "@types/node": "^15.12.5",
+    "@umijs/plugin-sass": "^1.1.1",
+    "@umijs/test": "^3.3.2",
+    "cross-env": "^7.0.3",
+    "prettier": "^2.2.1",
+    "react-redux": "^7.2.2",
+    "yorkie": "^2.0.0"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  }
+}
